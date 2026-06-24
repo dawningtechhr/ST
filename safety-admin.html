@@ -689,7 +689,7 @@ function renderDashboardRecent(records){
   </tr></thead><tbody>${recent.map(r=>`<tr>
     <td style="white-space:nowrap">${formatTimestamp(r.timestamp)}</td><td>${r.dept}</td><td style="color:var(--ink3)">${r.empId}</td>
     <td><strong>${r.name}</strong></td>
-    <td><strong>${r.score * 5}</strong> / 100</td>
+    <td><strong>${r.score * 10}</strong> / 100</td>
     <td><span class="badge ${r.pass==='通過'?'pass':'fail'}">${r.pass}</span></td>
   </tr>`).join('')}</tbody></table>`;
 }
@@ -760,7 +760,7 @@ function renderTable(){
     <td>${r.dept}</td>
     <td style="color:var(--ink3)">${r.empId}</td>
     <td><strong>${r.name}</strong></td>
-    <td><strong>${Number(r.score)*5}</strong> / 100</td>
+    <td><strong>${Number(r.score)*10}</strong> / 100</td>
     <td><span class="badge ${r.pass==='通過'?'pass':'fail'}">${r.pass}</span></td>
     <td style="white-space:nowrap">${formatTimestamp(r.timestamp)}</td>
     <td style="color:var(--ink3)">${r.timeSpent}</td>
@@ -828,8 +828,8 @@ function showDetail(idx){
   const pass = r.pass==='通過';
   document.getElementById('modal-body').innerHTML = `
     <div class="score-big">
-      <div class="num ${pass?'pass':'fail'}">${r.score} / 20</div>
-      <div style="font-size:1.1rem;font-weight:700;color:var(--ink2);margin:.4rem 0 .2rem">分數 ${Number(r.score)*5} 分</div>
+      <div class="num ${pass?'pass':'fail'}">${r.score} / 10</div>
+      <div style="font-size:1.1rem;font-weight:700;color:var(--ink2);margin:.4rem 0 .2rem">分數 ${Number(r.score)*10} 分</div>
       <div class="sub"><span class="badge ${pass?'pass':'fail'}">${r.pass}</span></div>
     </div>
     <div class="detail-grid">
